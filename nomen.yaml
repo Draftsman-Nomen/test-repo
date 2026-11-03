@@ -1,0 +1,95 @@
+# This repository holds an ontology, described with Nomen.
+#
+# Nomen reads this file to know what can be described here: the types,
+# their fields, which fields are required, what a relation may point at,
+# and how each field maps to SKOS. Concepts and questions live in their
+# own files, one per item, in the folders named below.
+#
+# Changing the metamodel is a change like any other: offer it for review.
+
+nomen: 1
+
+metamodel:
+  version: 1
+  types:
+
+    concept:
+      label: Concept
+      folder: concepts
+      maps_to: skos:Concept
+      fields:
+        prefLabel:
+          label: Preferred term
+          kind: text
+          required: true
+          maps_to: skos:prefLabel
+        altLabel:
+          label: Alternative terms
+          kind: text
+          many: true
+          maps_to: skos:altLabel
+        definition:
+          label: Definition
+          kind: prose
+          required: true
+          maps_to: skos:definition
+        scopeNote:
+          label: Scope note
+          kind: prose
+          maps_to: skos:scopeNote
+        example:
+          label: Example
+          kind: prose
+          maps_to: skos:example
+        source:
+          label: Source
+          kind: url
+          many: true
+          maps_to: dct:source
+        broader:
+          label: Broader concept
+          kind: relation
+          to: concept
+          many: true
+          maps_to: skos:broader
+        related:
+          label: Related concepts
+          kind: relation
+          to: concept
+          many: true
+          maps_to: skos:related
+        status:
+          label: Status
+          kind: choice
+          choices:
+            active: In use
+            deprecated: Deprecated
+          default: active
+
+    # Competency questions: what the ontology must be able to answer.
+    # They are about the ontology, not part of it, so they map to
+    # nothing and are not exported.
+    question:
+      label: Competency question
+      folder: questions
+      fields:
+        question:
+          label: Question
+          kind: prose
+          required: true
+        concepts:
+          label: Concepts needed to answer it
+          kind: relation
+          to: concept
+          many: true
+          required: true
+        explanation:
+          label: Explanation
+          kind: prose
+        status:
+          label: Status
+          kind: choice
+          choices:
+            active: In use
+            deprecated: Deprecated
+          default: active

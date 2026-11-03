@@ -1,0 +1,23 @@
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://draftsman-nomen.github.io/test-repo/> a skos:ConceptScheme ;
+    dct:title "Draftsman-Nomen/test-repo" ;
+    skos:hasTopConcept <https://draftsman-nomen.github.io/test-repo/item>, <https://draftsman-nomen.github.io/test-repo/item-2> .
+
+<https://draftsman-nomen.github.io/test-repo/item> a skos:Concept ;
+    skos:inScheme <https://draftsman-nomen.github.io/test-repo/> ;
+    skos:prefLabel "item" ;
+    skos:definition "hello world!" ;
+    skos:topConceptOf <https://draftsman-nomen.github.io/test-repo/> .
+
+<https://draftsman-nomen.github.io/test-repo/item-2> a skos:Concept ;
+    skos:inScheme <https://draftsman-nomen.github.io/test-repo/> ;
+    skos:prefLabel "Item 2" ;
+    skos:definition "Hallo" ;
+    skos:topConceptOf <https://draftsman-nomen.github.io/test-repo/> .

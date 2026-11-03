@@ -1,0 +1,9 @@
+type: question
+id: how-much-does-a-member-pay-for-an
+question: How much does a member pay for an overdue loan?
+concepts:
+  - fine
+  - overdue
+  - loan
+  - member
+status: active

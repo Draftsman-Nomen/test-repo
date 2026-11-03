@@ -1,0 +1,9 @@
+type: question
+id: can-a-book-be-reserved-while-all-its
+question: Can a book be reserved while all its copies are on loan?
+concepts:
+  - reservation
+  - book
+  - copy
+  - loan
+status: active

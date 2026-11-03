@@ -9,57 +9,82 @@
 
 nomen: 1
 
+# What this ontology is, in a name and a sentence.
+title: "Library terms"
+description: "The words we use at our library, so that staff, volunteers and the website all mean the same thing."
+
+# The language the texts are written in, for the export: "fiets"@nl.
+language: en
+
+# Where the published ontology lives. Each item's IRI is this address
+# followed by its id; by default it is the repository's GitHub Pages
+# address, https://<owner>.github.io/<repository>/.
+# publish:
+#   base: https://example.org/terms/
+
 metamodel:
   version: 1
   types:
 
     concept:
       label: Concept
+      help: The words your field uses — what each one means, and how they relate.
       folder: concepts
       maps_to: skos:Concept
       fields:
         prefLabel:
           label: Preferred term
+          help: The word itself, as people in your field use it.
           kind: text
           required: true
           maps_to: skos:prefLabel
         altLabel:
           label: Alternative terms
+          help: Other words people use for the same thing.
           kind: text
           many: true
           maps_to: skos:altLabel
         definition:
           label: Definition
+          help: What it means, in one sentence — what kind of thing it is, and what makes it different from others of that kind.
           kind: prose
           required: true
           maps_to: skos:definition
         scopeNote:
           label: Scope note
+          help: When to use it and when not, or what it is often confused with.
           kind: prose
           maps_to: skos:scopeNote
         example:
           label: Example
+          help: A real case that fits, to make the meaning concrete.
           kind: prose
           maps_to: skos:example
         source:
           label: Source
+          help: Where the definition comes from — a law, a rule, a dictionary — so others can check it.
           kind: url
           many: true
           maps_to: dct:source
         broader:
           label: Broader concept
+          help: What it is a kind of — an e-book is a kind of book.
           kind: relation
           to: concept
           many: true
+          # Never, however far up, broader than itself.
+          acyclic: true
           maps_to: skos:broader
         related:
           label: Related concepts
+          help: Other words that belong with it, but that it is not a kind of.
           kind: relation
           to: concept
           many: true
           maps_to: skos:related
         status:
           label: Status
+          help: Whether it is still to be used.
           kind: choice
           choices:
             active: In use
@@ -71,23 +96,28 @@ metamodel:
     # nothing and are not exported.
     question:
       label: Competency question
+      help: What the ontology must be able to answer. A word no question needs may not belong here.
       folder: questions
       fields:
         question:
           label: Question
+          help: A question people in your field ask, that the ontology must help answer.
           kind: prose
           required: true
         concepts:
           label: Concepts needed to answer it
+          help: The words you need to answer it.
           kind: relation
           to: concept
           many: true
           required: true
         explanation:
           label: Explanation
+          help: Why the question matters, or who asks it.
           kind: prose
         status:
           label: Status
+          help: Whether it is still to be used.
           kind: choice
           choices:
             active: In use

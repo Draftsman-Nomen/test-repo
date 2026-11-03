@@ -1,0 +1,8 @@
+type: question
+id: can-a-loan-be-renewed
+question: Can a loan be renewed?
+concepts:
+  - renewal
+  - loan
+  - reservation
+status: active

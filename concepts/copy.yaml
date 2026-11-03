@@ -1,0 +1,9 @@
+type: concept
+id: copy
+prefLabel: copy
+definition: A copy is a physical object of a printed book that the library owns and lends out.
+scopeNote: 'Members borrow a copy, not a book: when all copies of a book are on loan, the book can still be reserved.'
+related:
+  - printed-book
+  - loan
+status: active

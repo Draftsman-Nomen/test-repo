@@ -1,0 +1,8 @@
+type: concept
+id: fine
+prefLabel: fine
+definition: A fine is an amount that a member pays for each day that a loan is overdue.
+related:
+  - overdue
+  - member
+status: active

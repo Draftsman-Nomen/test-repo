@@ -1,0 +1,10 @@
+type: concept
+id: e-book
+prefLabel: e-book
+altLabel:
+  - digital book
+definition: An e-book is a book that you read on a screen, and that more than one member can borrow at the same time.
+example: A novel that members download to an e-reader for three weeks.
+broader:
+  - book
+status: active

@@ -1,0 +1,9 @@
+type: concept
+id: overdue
+prefLabel: overdue
+definition: Overdue is the state of a loan whose due date has passed while the copy has not been returned.
+scopeNote: 'An e-book is never overdue: it returns by itself on its due date.'
+related:
+  - loan
+  - due-date
+status: active

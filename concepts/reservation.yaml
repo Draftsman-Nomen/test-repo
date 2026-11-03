@@ -1,0 +1,11 @@
+type: concept
+id: reservation
+prefLabel: reservation
+altLabel:
+  - hold
+definition: A reservation is a request by a member to borrow a book as soon as a copy of it is back from loan.
+related:
+  - member
+  - copy
+  - loan
+status: active

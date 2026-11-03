@@ -1,0 +1,8 @@
+type: concept
+id: book
+prefLabel: book
+altLabel:
+  - title
+definition: A book is a written work that the library lists once in its catalogue, however many copies of it there are.
+scopeNote: 'A book is the work, not the thing on the shelf: that is a copy. One book can have several copies, or none at all when it is an e-book.'
+status: active

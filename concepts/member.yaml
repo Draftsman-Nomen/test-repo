@@ -1,0 +1,7 @@
+type: concept
+id: member
+prefLabel: member
+altLabel:
+  - borrower
+definition: A member is a person who is registered with the library and may borrow from it.
+status: active

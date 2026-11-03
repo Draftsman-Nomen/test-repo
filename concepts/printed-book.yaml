@@ -1,0 +1,7 @@
+type: concept
+id: printed-book
+prefLabel: printed book
+definition: A printed book is a book that exists on paper, and of which the library owns one or more copies.
+broader:
+  - book
+status: active

@@ -1,0 +1,8 @@
+type: question
+id: how-many-copies-of-a-book-does-the
+question: How many copies of a book does the library have?
+concepts:
+  - copy
+  - book
+  - printed-book
+status: active

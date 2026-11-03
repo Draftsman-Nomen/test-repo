@@ -1,0 +1,9 @@
+type: concept
+id: loan
+prefLabel: loan
+definition: A loan is an agreement that a member may keep a copy or an e-book until its due date.
+related:
+  - member
+  - copy
+  - due-date
+status: active

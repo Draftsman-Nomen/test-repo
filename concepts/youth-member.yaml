@@ -1,0 +1,7 @@
+type: concept
+id: youth-member
+prefLabel: youth member
+definition: A youth member is a member who is younger than eighteen.
+broader:
+  - member
+status: active

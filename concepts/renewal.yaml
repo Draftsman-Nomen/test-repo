@@ -1,0 +1,10 @@
+type: concept
+id: renewal
+prefLabel: renewal
+definition: A renewal is a change to a loan that moves its due date later.
+scopeNote: A loan cannot be renewed when somebody else has a reservation for the same book.
+related:
+  - loan
+  - due-date
+  - reservation
+status: active

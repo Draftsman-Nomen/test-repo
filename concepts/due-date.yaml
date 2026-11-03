@@ -1,0 +1,7 @@
+type: concept
+id: due-date
+prefLabel: due date
+definition: A due date is the date by which a loan must be returned.
+related:
+  - loan
+status: active

@@ -7,17 +7,93 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
 <https://draftsman-nomen.github.io/test-repo/> a skos:ConceptScheme ;
-    dct:title "Draftsman-Nomen/test-repo" ;
-    skos:hasTopConcept <https://draftsman-nomen.github.io/test-repo/item>, <https://draftsman-nomen.github.io/test-repo/item-2> .
+    dct:title "Library terms" ;
+    skos:hasTopConcept <https://draftsman-nomen.github.io/test-repo/book>, <https://draftsman-nomen.github.io/test-repo/copy>, <https://draftsman-nomen.github.io/test-repo/due-date>, <https://draftsman-nomen.github.io/test-repo/fine>, <https://draftsman-nomen.github.io/test-repo/loan>, <https://draftsman-nomen.github.io/test-repo/member>, <https://draftsman-nomen.github.io/test-repo/overdue>, <https://draftsman-nomen.github.io/test-repo/renewal>, <https://draftsman-nomen.github.io/test-repo/reservation> .
 
-<https://draftsman-nomen.github.io/test-repo/item> a skos:Concept ;
+<https://draftsman-nomen.github.io/test-repo/book> a skos:Concept ;
     skos:inScheme <https://draftsman-nomen.github.io/test-repo/> ;
-    skos:prefLabel "item" ;
-    skos:definition "hello world!" ;
+    skos:prefLabel "book"@en ;
+    skos:altLabel "title"@en ;
+    skos:definition "A book is a written work that the library lists once in its catalogue, however many copies of it there are."@en ;
+    skos:scopeNote "A book is the work, not the thing on the shelf: that is a copy. One book can have several copies, or none at all when it is an e-book."@en ;
     skos:topConceptOf <https://draftsman-nomen.github.io/test-repo/> .
 
-<https://draftsman-nomen.github.io/test-repo/item-2> a skos:Concept ;
+<https://draftsman-nomen.github.io/test-repo/copy> a skos:Concept ;
     skos:inScheme <https://draftsman-nomen.github.io/test-repo/> ;
-    skos:prefLabel "Item 2" ;
-    skos:definition "Hallo" ;
+    skos:prefLabel "copy"@en ;
+    skos:definition "A copy is a physical object of a printed book that the library owns and lends out."@en ;
+    skos:scopeNote "Members borrow a copy, not a book: when all copies of a book are on loan, the book can still be reserved."@en ;
+    skos:related <https://draftsman-nomen.github.io/test-repo/printed-book>, <https://draftsman-nomen.github.io/test-repo/loan> ;
     skos:topConceptOf <https://draftsman-nomen.github.io/test-repo/> .
+
+<https://draftsman-nomen.github.io/test-repo/due-date> a skos:Concept ;
+    skos:inScheme <https://draftsman-nomen.github.io/test-repo/> ;
+    skos:prefLabel "due date"@en ;
+    skos:definition "A due date is the date by which a loan must be returned."@en ;
+    skos:related <https://draftsman-nomen.github.io/test-repo/loan> ;
+    skos:topConceptOf <https://draftsman-nomen.github.io/test-repo/> .
+
+<https://draftsman-nomen.github.io/test-repo/e-book> a skos:Concept ;
+    skos:inScheme <https://draftsman-nomen.github.io/test-repo/> ;
+    skos:prefLabel "e-book"@en ;
+    skos:altLabel "digital book"@en ;
+    skos:definition "An e-book is a book that you read on a screen, and that more than one member can borrow at the same time."@en ;
+    skos:example "A novel that members download to an e-reader for three weeks."@en ;
+    skos:broader <https://draftsman-nomen.github.io/test-repo/book> .
+
+<https://draftsman-nomen.github.io/test-repo/fine> a skos:Concept ;
+    skos:inScheme <https://draftsman-nomen.github.io/test-repo/> ;
+    skos:prefLabel "fine"@en ;
+    skos:definition "A fine is an amount that a member pays for each day that a loan is overdue."@en ;
+    skos:related <https://draftsman-nomen.github.io/test-repo/overdue>, <https://draftsman-nomen.github.io/test-repo/member> ;
+    skos:topConceptOf <https://draftsman-nomen.github.io/test-repo/> .
+
+<https://draftsman-nomen.github.io/test-repo/loan> a skos:Concept ;
+    skos:inScheme <https://draftsman-nomen.github.io/test-repo/> ;
+    skos:prefLabel "loan"@en ;
+    skos:definition "A loan is an agreement that a member may keep a copy or an e-book until its due date."@en ;
+    skos:related <https://draftsman-nomen.github.io/test-repo/member>, <https://draftsman-nomen.github.io/test-repo/copy>, <https://draftsman-nomen.github.io/test-repo/due-date> ;
+    skos:topConceptOf <https://draftsman-nomen.github.io/test-repo/> .
+
+<https://draftsman-nomen.github.io/test-repo/member> a skos:Concept ;
+    skos:inScheme <https://draftsman-nomen.github.io/test-repo/> ;
+    skos:prefLabel "member"@en ;
+    skos:altLabel "borrower"@en ;
+    skos:definition "A member is a person who is registered with the library and may borrow from it."@en ;
+    skos:topConceptOf <https://draftsman-nomen.github.io/test-repo/> .
+
+<https://draftsman-nomen.github.io/test-repo/overdue> a skos:Concept ;
+    skos:inScheme <https://draftsman-nomen.github.io/test-repo/> ;
+    skos:prefLabel "overdue"@en ;
+    skos:definition "Overdue is the state of a loan whose due date has passed while the copy has not been returned."@en ;
+    skos:scopeNote "An e-book is never overdue: it returns by itself on its due date."@en ;
+    skos:related <https://draftsman-nomen.github.io/test-repo/loan>, <https://draftsman-nomen.github.io/test-repo/due-date> ;
+    skos:topConceptOf <https://draftsman-nomen.github.io/test-repo/> .
+
+<https://draftsman-nomen.github.io/test-repo/printed-book> a skos:Concept ;
+    skos:inScheme <https://draftsman-nomen.github.io/test-repo/> ;
+    skos:prefLabel "printed book"@en ;
+    skos:definition "A printed book is a book that exists on paper, and of which the library owns one or more copies."@en ;
+    skos:broader <https://draftsman-nomen.github.io/test-repo/book> .
+
+<https://draftsman-nomen.github.io/test-repo/renewal> a skos:Concept ;
+    skos:inScheme <https://draftsman-nomen.github.io/test-repo/> ;
+    skos:prefLabel "renewal"@en ;
+    skos:definition "A renewal is a change to a loan that moves its due date later."@en ;
+    skos:scopeNote "A loan cannot be renewed when somebody else has a reservation for the same book."@en ;
+    skos:related <https://draftsman-nomen.github.io/test-repo/loan>, <https://draftsman-nomen.github.io/test-repo/due-date>, <https://draftsman-nomen.github.io/test-repo/reservation> ;
+    skos:topConceptOf <https://draftsman-nomen.github.io/test-repo/> .
+
+<https://draftsman-nomen.github.io/test-repo/reservation> a skos:Concept ;
+    skos:inScheme <https://draftsman-nomen.github.io/test-repo/> ;
+    skos:prefLabel "reservation"@en ;
+    skos:altLabel "hold"@en ;
+    skos:definition "A reservation is a request by a member to borrow a book as soon as a copy of it is back from loan."@en ;
+    skos:related <https://draftsman-nomen.github.io/test-repo/member>, <https://draftsman-nomen.github.io/test-repo/copy>, <https://draftsman-nomen.github.io/test-repo/loan> ;
+    skos:topConceptOf <https://draftsman-nomen.github.io/test-repo/> .
+
+<https://draftsman-nomen.github.io/test-repo/youth-member> a skos:Concept ;
+    skos:inScheme <https://draftsman-nomen.github.io/test-repo/> ;
+    skos:prefLabel "youth member"@en ;
+    skos:definition "A youth member is a member who is younger than eighteen."@en ;
+    skos:broader <https://draftsman-nomen.github.io/test-repo/member> .
